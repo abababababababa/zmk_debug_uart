@@ -1,16 +1,1 @@
-# zmk_debug_uart/Kconfig
 
-config SERIAL
-    default y
-
-config CONSOLE
-    default y
-
-config UART_CONSOLE
-    default y
-
-config LOG
-    default y
-
-config ZMK_LOG_LEVEL_DBG
-    default y
