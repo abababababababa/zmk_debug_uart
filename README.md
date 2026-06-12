@@ -4,7 +4,7 @@
 
 ### west.yamlに以下記述
 remotes:の方
-- name: abababababababa
+- name: abababababababa  
   url-base: https://github.com/abababababababa
 
 ### projects:の方
