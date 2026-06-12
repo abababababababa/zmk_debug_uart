@@ -1,11 +1,27 @@
-# ZMK Module Template
-
-This repository contains a template for a ZMK module, as it would most frequently be used. 
+# ZMKで特定のピンからUARTのログを出すためのモジュール
 
 ## Usage
 
-Read through the [ZMK Module Creation](https://zmk.dev/docs/development/module-creation) page for details on how to configure this template.
+###west.yamlに以下記述
+remotes:の方
+- name: abababababababa
+  url-base: https://github.com/abababababababa
 
-## More Info
+###projects:の方
+- name: zmk_debug_uart
+  remote: abababababababa
+  revision: main
+  path: modules/zmk_debug_uart
 
-For more info on modules, you can read through  through the [Zephyr modules page](https://docs.zephyrproject.org/3.5.0/develop/modules.html) and [ZMK's page on using modules](https://zmk.dev/docs/features/modules). [Zephyr's west manifest page](https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#west-manifests) may also be of use.
+###build.yamlに以下記述
+include:
+  - board: 略
+    shield: 略
+    ↓これ
+    extra-cmake-args: -DEXTRA_CONF_FILE=../modules/zmk_debug_uart/config/debug.conf
+
+###overlayファイルの先頭に以下記述
+#define DEBUG_UART_TX_PORT 1 //環境に応じて変える
+#define DEBUG_UART_TX_PIN  12 //環境に応じて変える
+#include <debug_uart.dtsi>
+
