@@ -23,7 +23,7 @@ include:
   - board: 略
     shield: 略
     ↓これ
-    extra-cmake-args: -DEXTRA_CONF_FILE=../modules/zmk_debug_uart/config/debug.conf
+    extra-cmake-args: -DEXTRA_CONF_FILE=../modules/zmk_debug_uart/config/debug_uart.conf
 ```
 
 ### overlayファイルの先頭に以下記述
