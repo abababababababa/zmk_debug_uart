@@ -1,4 +1,4 @@
-# ZMKで特定のピンからUARTのログを出すためのモジュール
+# incomplete ZMKで特定のピンからUARTのログを出すためのモジュール
 
 ## Usage
 
