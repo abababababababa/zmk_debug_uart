@@ -24,6 +24,7 @@ execute_process(
         ${Python3_EXECUTABLE}
         -c
         "import west.manifest; m=west.manifest.Manifest.from_topdir(); p=m.get_projects(['zmk_debug_uart'])[0]; u=p.userdata or {}; print(f'{u.get(\"tx_port\", \"\")};{u.get(\"tx_pin\", \"\")}')"
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     OUTPUT_VARIABLE DEBUG_UART_GPIO
     OUTPUT_STRIP_TRAILING_WHITESPACE
     RESULT_VARIABLE DEBUG_UART_RESULT
