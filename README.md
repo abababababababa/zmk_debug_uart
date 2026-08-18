@@ -2,7 +2,7 @@
 
 ## Usage
 
-### west.yamlに以下記述
+### west.ymlに以下記述
 remotes:の方
 ```yaml
 - name: abababababababa
@@ -14,21 +14,25 @@ projects:の方
 - name: zmk_debug_uart
   remote: abababababababa
   revision: main
-  path: modules/zmk_debug_uart
+  userdata:
+    tx_port: 1
+    tx_pin: 12
+```
+
+P0.06なら
+```yaml
+userdata:
+  tx_port: 0
+  tx_pin: 6
+```
+P1.12なら
+```yaml
+userdata:
+  tx_port: 1
+  tx_pin: 2
 ```
 
 ### build.yamlに以下記述
 ```yaml
-include:
-  - board: 略
-    shield: 略
-    ↓これ
-    extra-cmake-args: -DEXTRA_CONF_FILE=../modules/zmk_debug_uart/config/debug_uart.conf
-```
-
-### overlayファイルの先頭に以下記述
-```dts
-#define DEBUG_UART_TX_PORT 1 //環境に応じて変える
-#define DEBUG_UART_TX_PIN  12 //環境に応じて変える
-#include <debug_uart.dtsi>
+snippet: debug-uart
 ```
