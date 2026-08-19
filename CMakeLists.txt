@@ -57,11 +57,6 @@ if(DEBUG_UART_TX_PORT STREQUAL "" OR DEBUG_UART_TX_PIN STREQUAL "")
     )
 endif()
 
-message(
-    STATUS
-    "zmk_debug_uart: UART TX = P${DEBUG_UART_TX_PORT}.${DEBUG_UART_TX_PIN}"
-)
-
 # Pass the values to the devicetree preprocessor.
 set(
     DTS_EXTRA_CPPFLAGS
@@ -69,4 +64,14 @@ set(
     CACHE STRING
     "Extra devicetree preprocessor flags"
     FORCE
+)
+
+message(
+    STATUS
+    "zmk_debug_uart: UART TX = P${DEBUG_UART_TX_PORT}.${DEBUG_UART_TX_PIN}"
+)
+
+message(
+    STATUS
+    "zmk_debug_uart: DTS_EXTRA_CPPFLAGS = ${DTS_EXTRA_CPPFLAGS}"
 )
