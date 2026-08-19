@@ -3,6 +3,7 @@
 # Read the debug UART GPIO configuration from this project's
 # west manifest userdata and expose it to the devicetree
 # preprocessor.
+message(STATUS "zmk_debug_uart: CMakeLists.txt LOADED")
 
 cmake_minimum_required(VERSION 3.20.0)
 
