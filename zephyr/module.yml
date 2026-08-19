@@ -1,6 +1,6 @@
 name: zmk_debug_uart
 
 build:
-  cmake: .
+  cmake: ..
   settings:
     snippet_root: .
