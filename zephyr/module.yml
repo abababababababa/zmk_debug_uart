@@ -1,6 +1,5 @@
 name: zmk_debug_uart
 
 build:
-  cmake: "zephyr"
   settings:
     snippet_root: .
